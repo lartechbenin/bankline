@@ -12,7 +12,7 @@
                 
 <div class="col-sm-12 col-xl-12">
                         <div class="bg-light rounded h-100 p-4">
-                          <center>  <h3 class="mb-4 text-info" >Demande d'optention de carte VISA</h3></center>
+                          <center>  <h3 class="mb-4 text-warning" >Demande d'optention de carte VISA</h3></center>
                           <form method="POST" action="">
                           <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInput"
