@@ -22,14 +22,14 @@ Route::get('/', function () {
 
 Route::controller(UsersController::class)->group(function()
 {
-Route::get('/comptes','index')->name('compte');
+    Route::get('/comptes','index')->name('compte');
 
-Route::get('/profile','profil')->name('profil');
+    Route::get('/profile','profil')->name('profil');
 
-Route::get('/editeprofile','editer')->name('editer');
+    Route::get('/editeprofile','editer')->name('editer');
 
-Route::get('/securite','securite')->name('securite');
+    Route::get('/securite','securite')->name('securite');
 
-Route::get('/visa','visa')->name('visa');
+    Route::get('/visa','visa')->name('visa');
 
 });
