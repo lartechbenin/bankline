@@ -18,9 +18,28 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nom',
         'email',
         'password',
+        'prenom',
+        'date_naissance',
+        'telephone',
+        'adresse_domicile',
+        'profession',
+        'numero_carte',
+        'solde',
+        'devise',
+        'staut_compte',
+        'montant_attente',
+        'etape',
+        'code1',
+        'code2',
+        'code3',
+        'code4',
+        'code5',
+        'bloque_compte',
+        'pourcentage',
+        'login'
     ];
 
     /**
@@ -41,4 +60,36 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * implementation de la relation user_banque
+     * un user a un seul compte
+     */
+
+     public function banque()
+     {
+        return $this->hasOne(Banque::class);                                                                                          
+     }
+
+     /**
+      * implementation de la relation user_historique
+      *un user peut avoir plusieurs historiques
+      */
+
+      public function historiques()
+      {
+        return $this->hasMany(Historique::class);
+      }
+
+      /**
+       * implementation de la relation user_message
+       *un user peut recevoir plusieurs compte
+       */
+
+       public function messages()
+       {
+        return $this->hasMany(Message::class);
+       }
+
+    
 }
