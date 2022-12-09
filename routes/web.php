@@ -24,26 +24,12 @@ Route::controller(UsersController::class)->group(function()
 {
 Route::get('/comptes','index')->name('compte');
 
-});
-
-Route::controller(UsersController::class)->group(function()
-{
 Route::get('/profile','profil')->name('profil');
 
-});
-
-Route::controller(UsersController::class)->group(function()
-{
 Route::get('/editeprofile','editer')->name('editer');
 
-});
-Route::controller(UsersController::class)->group(function()
-{
 Route::get('/securite','securite')->name('securite');
 
-});
-Route::controller(UsersController::class)->group(function()
-{
 Route::get('/visa','visa')->name('visa');
 
 });
