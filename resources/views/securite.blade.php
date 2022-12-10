@@ -1,5 +1,5 @@
-
 @extends('template/template')
+
 @section('title','compte')
         <!-- Sidebar End -->
 @section('content')
