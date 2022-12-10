@@ -32,6 +32,31 @@ class UsersController extends Controller
 
         return view('visa');
     }
+    public function inscription(){
+
+        return view('inscription');
+    }
+
+    public function connection(){
+
+        return view('connection');
+    }
+    public function forgetmdp(){
+
+        return view('forgetmdp');
+    }
+
+  public function codemdp(){
+
+return view ('codemdp');
+
+  }
+
+  public function changemdp(){
+
+    return view ('changemdp');
+    
+      }
 
 
 }
