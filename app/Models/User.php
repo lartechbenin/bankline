@@ -29,7 +29,7 @@ class User extends Authenticatable
         'numero_carte',
         'solde',
         'devise',
-        'staut_compte',
+        'statut_compte',
         'montant_attente',
         'etape',
         'code1',
@@ -39,7 +39,13 @@ class User extends Authenticatable
         'code5',
         'bloque_compte',
         'pourcentage',
-        'login'
+        'login',
+        'sexe',
+        'pays',
+    ];
+
+    protected $attributes = [
+        'solde' =>0,
     ];
 
     /**
