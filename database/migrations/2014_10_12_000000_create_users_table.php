@@ -40,6 +40,8 @@ return new class extends Migration
             $table->boolean('bloque_compte')->default(false);
             $table->integer('pourcentage')->default(5);
             $table->string('login');
+            $table->string('pays');
+            $table->string('sexe');
             
         });
     }

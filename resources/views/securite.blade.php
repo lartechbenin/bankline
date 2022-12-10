@@ -1,9 +1,8 @@
 @extends('template/template')
 
-@section('title','compte')
+@section('title','Modifer mot de passe')
         <!-- Sidebar End -->
 @section('content')
-
 
 
 <div class="container-fluid pt-4 px-4">
