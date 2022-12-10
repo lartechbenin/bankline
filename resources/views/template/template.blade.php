@@ -29,6 +29,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.1.1/dist/cdn.min.js"></script>
 </head>
 
 <body>
