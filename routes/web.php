@@ -31,7 +31,8 @@ Route::controller(UsersController::class)->group(function()
         Route::get('/securite','securite')->name('securite');
         Route::get('/visa','visa')->name('visa');
         Route::get('/logout', 'logout')->name('logout');
-        Route::post('/modifierPass/{user}', 'modifierPass')->name('modifierPass');                                   
+        Route::post('/modifierPass/{user}', 'modifierPass')->name('modifierPass');  
+        Route::post('/modifierProfil/{user}', 'modifierProfil')->name('modifierProfil');                                  
 
     });
 

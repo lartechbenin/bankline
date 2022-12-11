@@ -99,6 +99,39 @@ return view ('codemdp');
             return back()->with('success', 'Mot de passe modifier avec succès');
       }
 
+      /**
+       * Modification du Profile
+       */
+
+       public function modifierProfil(Request $request, User $user)
+       {
+
+        //regle de validations
+            $request->validate([
+                'adresse_domicile'=>'required|string',
+            ]);
+
+            //mise a jour des champs
+            $user->adresse_domicile = $request->adresse_domicile;
+
+            /**
+             * mise a jour uniquement si le champ a changé
+             */
+           if($user->isDirty('adresse_domicile'))
+           {
+            $user->save();
+            //retour sur la page editer profile avec un message de succès
+            return back()->with('success', 'Profile modifié avec succès');
+           }
+
+           //retour sur la page editer profile avec un message de succès
+           return back()->with('success', "Vous n'avez rien modifié");
+
+            
+
+            
+       }
+
 
 
 
