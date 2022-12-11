@@ -26,7 +26,7 @@ class Banque extends Model
      * function pour la generation de numero de compte
      * return un entier de 11 chiffres
      */
-    public function numero_compte()
+    public static function numero_compte()
     {
        return random_int(12345678912, 98765432198);
          
