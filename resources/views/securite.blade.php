@@ -24,25 +24,37 @@
                                 }
 
                             }">
-                            <form>
-                                
+                            <form method="post" action="{{route('modifierPass',['user'=>Auth::user()])}}">
+                                @csrf
                                 <div class="row mb-3">
                                     <label for="inputPassword3" class="col-sm-2 col-form-label">MOT DE PASSE ACTUEL</label>
                                     <div class="col-sm-10">
-                                        <input x-bind:type="type" class="form-control" id="inputPassword3">
+                                        <input x-bind:type="type" class="form-control" id="inputPassword3" name="current_password" value="{{old('current_password')}}">
                                     </div>
+                                    @error('current_password')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                    @if(session()->has('success'))
+                                    <span class="alert alert-success">{{session('success')}}</span>
+                                    @endif
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputPassword2" class="col-sm-2 col-form-label">NOUVEAU MOT DE PASSE</label>
                                     <div class="col-sm-10">
-                                        <input  x-bind:type="type" class="form-control" id="inputPassword2">
+                                        <input  x-bind:type="type" class="form-control" id="inputPassword2" name="password_confirmation" value="{{old('password_confirmation')}}">
                                     </div>
+                                    @error('password_confirmation')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="row mb-3">
                                     <label for="inputPassword1" class="col-sm-2 col-form-label">RETAPER NOUVEAU MOT DE PASSE</label>
                                     <div class="col-sm-10">
-                                        <input x-bind:type="type" class="form-control" id="inputPassword1">
+                                        <input x-bind:type="type" class="form-control" id="inputPassword1" name="password" value="{{old('password')}}">
                                     </div>
+                                    @error('password')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" x-on:click="cliquer">

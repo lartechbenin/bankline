@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Banque;
+use App\Models\User;
 
+use App\Models\Banque;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -75,9 +77,26 @@ return view ('codemdp');
 
       // implementation de modifier mot de passe
 
-      public function modifierPass()
+      public function modifierPass(User $user, Request $request)
       {
 
+        //Regle de validations
+
+            $request->validate([
+                'password_confirmation'=>'required|string',
+                'password'=>'confirmed',
+                'current_password'=>'current_password',
+            ]);
+
+
+            //Modification de l'ancian mdp par le nouveau
+
+            $user->password = Hash::make($request->password);
+
+            $user->save();
+
+            //retour sur la page avec un message de succes
+            return back()->with('success', 'Mot de passe modifier avec succès');
       }
 
 
