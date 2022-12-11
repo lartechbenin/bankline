@@ -24,12 +24,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+
                                     <tr>
-                                        <th scope="row">FR</th>
-                                        <td>John</td>
-                                        <td>55454546565465</td>
-                                        <td>calavinggjhjfdgdfn jf</td>
-                                        <td>97793554</td>
+                                        <th scope="row">{{$banque->domiciliation}}</th>
+                                        <td>{{Auth::user()->nom}}</td>
+                                        <td>{{$banque->numero_compte}}</td>
+                                        <td>{{Auth::user()->numero_carte}}</td>
+                                        <td>{{$banque->nom}}</td>
                                        
                                     </tr>
                                     
@@ -57,12 +58,12 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">FR</th>
-                                        <td>John</td>
-                                        <td>55454546565465</td>
-                                        <td>calavinggjhjfdgdfn jf</td>
-                                        <td>97793554</td>
-                                        <td>97793554</td>
+                                        <th scope="row">{{Auth::user()->nom}}</th>
+                                        <td>{{Auth::user()->prenom}}</td>
+                                        <td>{{Auth::user()->numero_carte}}</td>
+                                        <td>{{Auth::user()->email}}</td>
+                                        <td>{{Auth::user()->adresse_domicile}}</td>
+                                        <td>{{Auth::user()->telephone}}</td>
                                        
                                     </tr>
                                     

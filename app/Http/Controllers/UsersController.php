@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Banque;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
     public function index(){        
         
         
-        return view('index');
+        
+        return view('index',['banque'=>Banque::where('user_id', Auth::id())->first()] );
     }
 
     public function profil(){
