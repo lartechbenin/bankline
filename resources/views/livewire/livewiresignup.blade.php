@@ -3,38 +3,65 @@
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="nom" placeholder="Nom de la famille " wire:model.lazy="nom">
                                     <label for="nom">Nom de la famille</label>
+                                    @error('nom')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="prenom" placeholder="Prenom " wire:model.lazy="prenom">
                                     <label for="prenom">Prenom</label>
+                                    @error('prenom')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="pays" placeholder="Pays" wire:model.lazy="pays">
                                     <label for="pays">Pays</label>
+                                    @error('pays')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="adresse_domicile" placeholder="adresse_domicile" wire:model.lazy="adresse_domicile">
                                     <label for="adresse_domicile">Adresse domicile</label>
+                                    @error('adresse_domicile')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="profession" placeholder="profession" wire:model.lazy="profession">
                                     <label for="profession">Profession</label>
+                                    @error('profession')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="devise" placeholder="devise" wire:model.lazy="devise">
                                     <label for="devise">Devise</label>
+                                    @error('devise')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="email" class="form-control" id="email" placeholder="name@example.com" wire:model.lazy="email">
                                     <label for="email">Email address</label>
+                                    @error('email')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="tel" class="form-control" id="telephone" placeholder="Telepgone" wire:model.lazy="telephone">
                                     <label for="telephone">Telephone</label>
+                                    @error('telephone')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="date" class="form-control" id="date_naissance" placeholder="Date de naissance" wire:model.lazy="date_naissance">
                                     <label for="date_naissance">Date de naissance</label>
+                                    @error('date_naissance')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <hr></hr>
                                 <div >    <center ><h5 class="text-danger">informations complémentaires </h5><h6>(facultatif)</h6></center></div>
@@ -72,14 +99,20 @@
                                                     </label>
                                                 </div>
                                             </div>
+                                            @error('sexe')
+                                                <span class="text-danger">{{$message}}</span>
+                                            @enderror
                                         </fieldset>
                                 <hr></hr>
                                 <div >    <center ><h5 class="text-danger">informations de Sécurité</h5></center></div>
 
                                 <hr></hr>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="numeropiece" placeholder="Numéro de votre pièce à founir" wire:model.lazy="numero_carte">
-                                    <label for="numeropiece">Numéro de votre pièce à founir(pièce d'identité, permis de conduis ect...)</label>
+                                    <input type="text" class="form-control" id="numero_carte" placeholder="Numéro de votre pièce à founir" wire:model.lazy="numero_carte">
+                                    <label for="numero_carte">Numéro de votre pièce à founir(pièce d'identité, permis de conduis ect...)</label>
+                                    @error('numero_carte')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div x-data="{
                                     type: 'password',
@@ -96,10 +129,16 @@
                                         <div class="form-floating mb-4">
                                             <input x-bind:type="type" class="form-control" id="password_confirmation" placeholder="Password" wire:model.lazy="password_confirmation">
                                             <label for="password_confirmation">Password</label>
+                                            @error('password_confirmation')
+                                            <span class="text-danger">{{$message}}</span>
+                                            @enderror
                                         </div>
                                         <div class="form-floating mb-4">
                                             <input x-bind:type="type" class="form-control" id="password" placeholder="Entré à nouveau mot de passe" wire:model.lazy="password">
                                             <label for="password">Entré à nouveau mot le passe</label>
+                                            @error('password')
+                                            <span class="text-danger">{{$message}}</span>
+                                            @enderror
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mb-4">
                                             <div class="form-check">
