@@ -16,9 +16,9 @@ class UsersController extends Controller
         return view('index',['banque'=>Banque::where('user_id', Auth::id())->first()] );
     }
 
-    public function profil(){
-
-        return view('profil');
+    public function profil(){        
+        
+        return view('profil', ['numero_compte'=>Banque::where('user_id', Auth::id())->first('numero_compte')]);
     }
 
 
@@ -72,6 +72,15 @@ return view ('codemdp');
         return redirect()->route('connection');
 
       }
+
+      // implementation de modifier mot de passe
+
+      public function modifierPass()
+      {
+
+      }
+
+
 
 
 }

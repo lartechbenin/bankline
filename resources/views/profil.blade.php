@@ -32,13 +32,14 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>John</td>
-                                            <td>Doe</td>
-                                            <td>jhon@email.com</td>
-                                            <td>USA</td>
-                                            <td>123</td>
-                                            <td>Member</td>
+                                            
+                                            <td>{{Auth::user()->nom}}</td>
+                                            <td>{{Auth::user()->prenom}}</td>
+                                            <td>{{$numero_compte->numero_compte}}</td>
+                                            <td>{{Auth::user()->email}}</td>
+                                            <td>{{Auth::user()->adresse_domicile}}</td>
+                                            <td>{{Auth::user()->telephone}}</td>
+                                            <td>{{Auth::user()->profession}}</td>
                                         </tr>
                                        
                                        
@@ -46,7 +47,7 @@
                                     
                                 </table>
                             </div>
-                            <button type="button" class="btn btn-success m-2" >MODIFIER</button>
+                           
 
                         </div>
                         
