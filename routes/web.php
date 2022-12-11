@@ -29,7 +29,8 @@ Route::controller(UsersController::class)->group(function()
         Route::get('/profile','profil')->name('profil');
         Route::get('/editeprofile','editer')->name('editer');
         Route::get('/securite','securite')->name('securite');
-        Route::get('/visa','visa')->name('visa');                                   
+        Route::get('/visa','visa')->name('visa');
+        Route::get('/logout', 'logout')->name('logout');                                   
 
     });
 

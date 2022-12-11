@@ -79,7 +79,7 @@
 <i class="fa fa-credit-card-alt fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">SOLDE DU COMPTE</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <h6 class="mb-0">{{Auth::user()->solde}}</h6>
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                             <i class="fa fa-credit-card fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">MONTANT EN ATTENTE</p>
-                           <h6 class="mb-0">$1234</h6>
+                           <h6 class="mb-0">{{Auth::user()->montant_attente}}</h6>
 
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                             <i class="fa fa-user-circle-o fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">STATUT DU COMPTE</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <h6 class="mb-0">{{Auth::user()->statut_compte}}</h6>
                             </div>
                         </div>
                     </div>

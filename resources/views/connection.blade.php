@@ -26,9 +26,10 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <script defer src="https://unpkg.com/alpinejs@3.1.1/dist/cdn.min.js"></script>
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    @livewireStyles
 </head>
 
 <body>
@@ -47,28 +48,7 @@
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <a href="index.html" class="">
-                             <center>   <h6 class="text-primary">ESPACE DE CONNEXION BANCAIRE</h6></center>
-                            </a>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">adress Email </label>
-                        </div>
-                        <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Mot de passe">
-                            <label for="floatingPassword">Mot de passe</label>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mb-4">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Afficher mot de passe </label>
-                            </div>
-                            <a href="{{route('forgetmdp')}}">Mot de passe oublier</a>
-                        </div>
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Connexion</button>
-                        <p class="text-center mb-0">Vous n'avez pas de compte? <a href="{{route('inscription')}}">Creer un compte</a></p>
+                        <livewire:livewirelogin />
                     </div>
                 </div>
             </div>
@@ -89,6 +69,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    @livewireScripts
 </body>
 
 </html>
