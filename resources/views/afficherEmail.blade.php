@@ -62,7 +62,8 @@
                             <form method="post" action="{{route('verification.send')}}">
                                 @csrf
                             <button>Renvoyé le lien de verification</button>
-                            
+                            @if(session()->hase('message'))
+                            <span class="text-success">{{$message}}</span>
                             </form>         
                                     
                     </div>
