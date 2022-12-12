@@ -62,6 +62,7 @@
                             <form method="post" action="{{route('verification.send')}}">
                                 @csrf
                             <button>Renvoyé le lien de verification</button>
+                            
                             </form>         
                                     
                     </div>
