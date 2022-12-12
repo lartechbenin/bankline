@@ -7,6 +7,7 @@ use App\Models\Banque;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 
 class Livewiresignup extends Component
 {
@@ -89,7 +90,9 @@ class Livewiresignup extends Component
 
         Auth::login($user);
 
-        redirect()->route('compte');
+        event(new Registered($user));
+
+        redirect()->route('verification.notice');
      }
     public function render()
     {

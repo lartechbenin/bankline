@@ -2,6 +2,7 @@
 <?php
 
 use App\Http\Controllers\UsersController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +24,7 @@ Route::get('/', function () {
 Route::controller(UsersController::class)->group(function()
 {
 
-    Route::middleware('auth')->group(function(){
+    Route::middleware(['auth', 'verified'])->group(function(){
 
         Route::get('/comptes','index')->name('compte');
         Route::get('/profile','profil')->name('profil');
@@ -32,10 +33,15 @@ Route::controller(UsersController::class)->group(function()
         Route::get('/visa','visa')->name('visa');
         Route::get('/logout', 'logout')->name('logout');
         Route::post('/modifierPass/{user}', 'modifierPass')->name('modifierPass');  
-        Route::post('/modifierProfil/{user}', 'modifierProfil')->name('modifierProfil');                                  
-
+        Route::post('/modifierProfil/{user}', 'modifierProfil')->name('modifierProfil');
+        
     });
 
+    Route::post('/verify/sendVerification', 'renvoiEmail')->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+    Route::get('/verify', 'verifierEmail')->name('verification.notice')->middleware('auth');    
+    Route::get('/verify/{id}/{hash}', 'traitementMail')->name('verification.verify')->middleware(['auth', 'signed']);
+
+    
     Route::middleware('guest')->group(function(){
 
         Route::get('/inscription','inscription')->name('inscription');

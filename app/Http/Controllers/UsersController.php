@@ -8,6 +8,7 @@ use App\Models\Banque;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 class UsersController extends Controller
 {
@@ -127,10 +128,34 @@ return view ('codemdp');
            //retour sur la page editer profile avec un message de succès
            return back()->with('success', "Vous n'avez rien modifié");
 
-            
+          
 
             
        }
+
+
+        //afficher une information à l'utilsateur pour qu'il confirme son email
+           
+        public function verifierEmail()
+        {
+         return view('afficherEmail');
+        }
+
+        // traitement de la verification de l'email
+
+        public function traitementMail(EmailVerificationRequest $request){
+
+            $request->fulfill();
+            return redirect()->route('compte');
+            
+        }
+
+        //renvoie de l'email
+
+        public function renvoiEmail(Request $request){
+            $request->user()->sendEmailVerificationNotification();
+            return back()->with('message', 'Lien de verification revoyé avec succès');
+        }
 
 
 
