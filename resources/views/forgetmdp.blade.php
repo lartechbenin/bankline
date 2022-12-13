@@ -48,15 +48,28 @@
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
-                            <a href="index.html" class="">
+                            <a href="" class="">
                              <center>   <h6 class="text-primary">Entrez votre Adresse Email</h6></center>
                             </a>
                         </div>
+                        <form method="post" action="{{route('forgetPassword')}}">
+                            @csrf                        
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">adresse Email </label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                            <label for="email">adresse Email </label>
+                            @error('email')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
                         </div>
+                        @error('status')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
+                        @if(session()->has('status'))
+                        <span class="alert-info">{{session('status')}}</span>
+                        @endif
+                        
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Envoyer</button>
+                        </form>
                         <p class="text-center mb-0"> <a href="{{route('connection')}}">connectez-vous</a></p>
                     </div>
                 </div>

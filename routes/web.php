@@ -47,8 +47,10 @@ Route::controller(UsersController::class)->group(function()
         Route::get('/inscription','inscription')->name('inscription');
         Route::get('/connection','connection')->name('connection');
         Route::get('/forgetmdp','forgetmdp')->name('forgetmdp');
-        Route::get('/codemdp','codemdp')->name('codemdp');
-        Route::get('/changemdp','changemdp')->name('changemdp');
+        Route::get('/codemdp','codemdp')->name('password');
+        Route::get('/changemdp/{token}','changemdp')->name('password.reset');
+        Route::post('forget-password', 'forgetPassword')->name('forgetPassword');
+        Route::post('reset-password', 'resetPassword')->name('password.update');
 
     });
 

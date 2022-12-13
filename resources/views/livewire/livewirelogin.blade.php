@@ -11,6 +11,9 @@
                                         @if(session()->has('email'))
                                         <span class="text-danger">{{session('email')}}</span>
                                         @endif
+                                        @if(session()->has('status'))
+                                        <span class="alert-success">{{session('status')}}</span>
+                                        @endif
                                         @error('email')
                                         <span class="text-danger">{{$message}}</span>
                                         @enderror
