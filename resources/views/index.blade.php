@@ -190,7 +190,7 @@
                                 <img class="rounded-circle flex-shrink-0" src="img/logo.png" alt="" style="width: 40px; height: 40px;">
                                 <div class="w-100 ms-3">
                                     <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">$mabanque</h6>
+                                        <h6 class="mb-0">{{$banque->nom}}</h6>
                                         <small>1 minutes </small>
                                     </div>
                                     <span>Bienvenue à $mabanque ,nous expérons que vous ferez une bonne expérience avec nous ...</span>
