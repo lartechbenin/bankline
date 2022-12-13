@@ -23,9 +23,24 @@
             
           
           <div class="box-header">
-                  <h3 class="box-title">Modification pour l'utilisateur</h3>
+          @error('echec')
+          <span class="alert alert-danger">{{$message}}</span>
+          @enderror
+
+          
+          
+          
+          
+                  <h3 class="box-title">Modification pour l'utilisateur <span class=" alert-info">{{session('success')}}</span>
+                  
+                  </h3>
+                  
           </div>
-          <form method="POST" action="" id="updateform">
+          
+          <form method="POST" action="{{route('miseAjour')}}" id="updateform">
+            @csrf
+
+            <input type="hidden" name="id" value="{{$id}}" >
           <div class="row">
           
             <div class="col-md-4">                
@@ -39,8 +54,11 @@
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="nom" value="" class="form-control" id="nom"/>
+                      <input type="text" name="nom" value="{{$nom}}" class="form-control" id="nom"/>
                     </div><!-- /.input group -->
+                    @error('nom')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                   </div><!-- /.form group -->
 
                   <div class="form-group">
@@ -48,8 +66,11 @@
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="prenom" value="" class="form-control" id="prenom"/>
+                      <input type="text" name="prenom" value="{{$prenom}}" class="form-control" id="prenom"/>
                     </div><!-- /.input group -->
+                    @error('prenom')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                   </div><!-- /.form group -->
 
                   <div class="form-group">
@@ -57,8 +78,11 @@
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="email" name="email" value="" class="form-control" id="email"/>
+                      <input type="email" name="email" value="{{$email}}" class="form-control" id="email"/>
                     </div><!-- /.input group -->
+                    @error('email')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                   </div><!-- /.form group -->
 
                   <div class="form-group">
@@ -66,8 +90,11 @@
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="sexe" value="" class="form-control" id="sexe"/>
+                      <input type="text" name="sexe" value="{{$sexe}}" class="form-control" id="sexe"/>
                     </div><!-- /.input group -->
+                    @error('sexe')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                   </div><!-- /.form group -->
 
                   <div class="form-group">
@@ -75,8 +102,11 @@
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="date" value="" class="form-control" id="date"/>
+                      <input type="text" name="date_naissance" value="{{$date_naissance}}" class="form-control" id="date"/>
                     </div><!-- /.input group -->
+                    @error('date_naissace')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                   </div><!-- /.form group -->
                   
                   <div class="form-group">
@@ -84,8 +114,11 @@
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="telephone" value="" class="form-control" id="telephone"/>
+                      <input type="text" name="telephone" value="{{$telephone}}" class="form-control" id="telephone"/>
                     </div><!-- /.input group -->
+                    @error('telephone')
+                    <span class="text-danger">{{$telephone}}</span>
+                    @enderror
                   </div><!-- /.form group -->
 
                   <div class="form-group">
@@ -93,33 +126,11 @@
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="pays" value="" class="form-control" id="pays"/>
+                      <input type="text" name="pays" value="{{$pays}}" class="form-control" id="pays"/>
                     </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-
-                  <div class="form-group">
-                    <label>Ville*:</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                      </div>
-                      <input type="text" name="ville" value="" class="form-control" id="ville"/>
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-
-                  <!-- phone mask -->
-                  <div class="form-group">
-                    <label>Montant Actuel (En Euro)*:</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                      </div>
-                      <input type="text" name="montant" value=""  class="form-control" id="montant" />
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
-                  <!-- phone mask -->
-                  <div class="form-group">
-                    <div class="input-group">
-                      <button class="btn btn-block btn-primary btn-lg" name="modifier" id="modifier" type="submit">VALIDER</button>
-                    </div><!-- /.input group -->
+                    @error('pays')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                   </div><!-- /.form group -->
 
                 </div><!-- /.box-body -->
@@ -131,72 +142,69 @@
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="adresse" value=""  class="form-control" id="adresse" />
+                      <input type="text" name="adresse_domicile" value="{{$adresse_domicile}}" class="form-control"  class="form-control" id="adresse" />
                     </div><!-- /.input group -->
+                    @error('adresse_domicile')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                   </div><!-- /.form group -->
-                  <div class="form-group">
-                    <label>Login*:</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                      </div>
-                      <input type="text" name="login" value=""  class="form-control" id="login" />
-                    </div><!-- /.input group -->
-                  </div><!-- /.form group -->
+                  
                   <div class="form-group">
                     <label>devise*:</label>
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="devise" value=""  class="form-control" id="devise" />
+                      <input type="text" name="devise" value="{{$devise}}"  class="form-control" id="devise" />
                   </div><!-- /.input group -->
+                  @error('devise')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
               </div><!-- /.form group -->
-              <div class="form-group">
-                    <label>compte*:</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                      </div>
-                      <input type="text" name="compte" value=""  class="form-control" id="compte" />
-                    </div><!-- /.input group -->
-              </div><!-- /.form group -->
-              <div class="form-group">
-                    <label>iban*:</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                      </div>
-                      <input type="text" name="iban" value=""  class="form-control" id="iban" />
-                    </div><!-- /.input group -->
-              </div><!-- /.form group -->
+              
+              
               <div class="form-group">
                     <label>etape*:</label>
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="etape" value=""  class="form-control" id="etape" />
+                      <input type="text" name="etape" value="{{$etape}}"  class="form-control" id="etape" />
                     </div><!-- /.input group -->
+                    @error('etape')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
               </div><!-- /.form group -->
               <div class="form-group">
                     <label>verif1*:</label>
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="verif1" value=""  class="form-control" id="verif1" />
+                      <input type="text" name="code1" value="{{$code1}}"  class="form-control" id="verif1" />
                     </div><!-- /.input group -->
+                    @error('code1')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
               </div><!-- /.form group -->
               <div class="form-group">
                     <label>verif2*:</label>
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="verif2" value=""  class="form-control" id="verif2" />
+                      <input type="text" name="code2" value="{{$code2}}"  class="form-control" id="verif2" />
                     </div><!-- /.input group -->
+                    @error('code2')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
               </div><!-- /.form group -->
               <div class="form-group">
                     <label>verif3*:</label>
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="verif3" value=""  class="form-control" id="verif3" />
+                      <input type="text" name="code3" value="{{$code3}}"  class="form-control" id="verif3" />
                     </div><!-- /.input group -->
+                    @error('code3')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
               </div><!-- /.form group -->     
 
               </div>
@@ -206,40 +214,35 @@
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="verif4" value=""  class="form-control" id="verif4" />
+                      <input type="text" name="code4" value="{{$code4}}"  class="form-control" id="verif4" />
                     </div><!-- /.input group -->
+                    @error('code4')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                   </div><!-- /.form group -->
                   <div class="form-group">
                     <label>verif5*:</label>
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="verif5" value=""  class="form-control" id="verif5" />
+                      <input type="text" name="code5" value="{{$code5}}"  class="form-control" id="verif5" />
                     </div><!-- /.input group -->
+                    @error('code5')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                   </div><!-- /.form group -->
-                  <div class="form-group">
-                    <label>verif6*:</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                      </div>
-                      <input type="text" name="verif6" value=""  class="form-control" id="verif6" />
-                  </div><!-- /.input group -->
-              </div><!-- /.form group -->
-              <div class="form-group">
-                    <label>verif7*:</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                      </div>
-                      <input type="text" name="verif7" value=""  class="form-control" id="verif7" />
-                    </div><!-- /.input group -->
-              </div><!-- /.form group -->
+                  
+              
               <div class="form-group">
                     <label>Pourcentage*:</label>
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="pourcentage" value=""  class="form-control" id="pourcentage" />
+                      <input type="text" name="pourcentage" value="{{$pourcentage}}"  class="form-control" id="pourcentage" />
                     </div><!-- /.input group -->
+                    @error('pourcentage')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
               </div><!-- /.form group -->
 
               <div class="form-group">
@@ -247,8 +250,11 @@
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="code" value=""  class="form-control" id="code" />
+                      <input type="text" name="bloque_compte" value="{{$bloque_compte}}"  class="form-control" id="code" />
                     </div><!-- /.input group -->
+                    @error('bloque_compte')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
               </div><!-- /.form group -->
 
               <div class="form-group">
@@ -256,16 +262,40 @@
                     <div class="input-group">
                       <div class="input-group-addon">
                       </div>
-                      <input type="text" name="debloquer" value=""  class="form-control" id="debloquer" />
+                      <input type="text" name="montant_bloque" value="{{$montant_bloque}}"  class="form-control" id="debloquer" />
                     </div><!-- /.input group -->
+                    @error('montant_bloque')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
               </div><!-- /.form group -->
+
+               <!-- phone mask -->
+               <div class="form-group">
+                    <label>Montant Actuel (En Euro)*:</label>
+                    <div class="input-group">
+                      <div class="input-group-addon">
+                      </div>
+                      <input type="text" name="solde" value="{{$solde}}"  class="form-control" id="montant" />
+                    </div><!-- /.input group -->
+                    @error('solde')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
+                  </div><!-- /.form group -->
+                  <!-- phone mask -->
+
+
+                  <div class="form-group">
+                    <div class="input-group">
+                      <button class="btn btn-block btn-primary btn-lg"  id="modifier" type="submit">VALIDER</button>
+                    </div><!-- /.input group -->
+                  </div><!-- /.form group -->
                    
 
               </div>
-              
-
-  </div>       
+            </div>
           </form>
+            </div>       
+          
   
             <!-- Widgets End -->
 

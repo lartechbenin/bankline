@@ -59,27 +59,21 @@ Route::controller(UsersController::class)->group(function()
         Route::post('reset-password', 'resetPassword')->name('password.update');
 
     });
+});
 
-    Route::controller(AdminController::class)->group(function(){
+Route::controller(AdminController::class)->group(function(){
 
-        Route::get('/admin','admin')->name('admin');
-        Route::get('/adindex','adindex')->name('adindex');
-        Route::get('/ajoutercredit','adcredit')->name('adcredit');
-        Route::get('/ajoutersolde','adcreditsend')->name('adcreditsend');
-        Route::get('/transfert','adtransfert')->name('adtransfert');
-        Route::get('/modifier','admodif')->name('admodif');
-        Route::get('/update','admodifsend')->name('admodifsend');
-        Route::get('/status','aduserstatus')->name('aduserstatus');
-        Route::get('/adminconnect','adminconnect')->name('adminconnect');
-
-
-
-
-
-
-
-    });
-
-
-
+    Route::get('/admin','admin')->name('admin');
+    Route::get('/adindex','adindex')->name('adindex');
+    Route::get('/ajoutercredit','adcredit')->name('adcredit');
+    Route::get('/ajoutersolde/{user}','adcreditsend')->name('adcreditsend');
+    Route::get('/transfert','adtransfert')->name('adtransfert');
+    Route::get('/modifier','admodif')->name('admodif');
+    //Route::get('/update','admodifsend')->name('admodifsend');
+    Route::get('/status','aduserstatus')->name('aduserstatus');
+    Route::get('/adminconnect','adminconnect')->name('adminconnect');
+    Route::get('/supprimer/{user}', 'supprimer')->name('supprimer');
+    Route::get('/modifier/{user}', 'modifier')->name('modifier');
+    Route::post('/modifier', 'miseAjour')->name('miseAjour');
+    Route::post('/crediter', 'crediterMontant')->name('crediterMontant');
 });

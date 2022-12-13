@@ -18,7 +18,7 @@
                         <h6 class="mb-0">Rappel </h6>
                     </div>
                     <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                    <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr>
                                     <th scope="col">Nombre de client</th>
@@ -28,15 +28,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>02</td>
-                                    <td>05</td>
-                                    <td>1</td>
-                                    <td>10%</td>
-                                </tr>
-                             
-                             
                                 
+                                <tr>
+                                    <td>{{$listeClient->count()}}</td>
+                                    <td>{{$transfert_cour}}</td>
+                                    <td>{{$transfert_terminer}}</td>
+                                    <td>{{round($pourcentage,2)}}%</td>
+                                </tr>
                                 
                             </tbody>
                         </table>
@@ -99,17 +97,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
+                                    
+                                    @foreach($transfert_list->chunk(25) as $transfertcours)
+                                    @foreach($transfertcours as $transfert)
                                     <tr>
-                                        <th></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                       
+                                        <th>{{$transfert->id}}</th>
+                                        <td>{{$transfert->nom}} {{$transfert->prenom}}</td>
+                                        <td>{{$transfert->etape}}</td>
+                                        <td>{{$transfert->code1}}</td>
+                                        <td>{{$transfert->code2}}</td>
+                                        <td>{{$transfert->code3}}</td>
+                                        <td>{{$transfert->code4}}</td>
+                                        <td>{{$transfert->code5}}</td>                                    
                                     </tr>
+                                    @endforeach
+                                    @endforeach
                                     
                                 </tbody>
                             </table>

@@ -28,15 +28,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>02</td>
-                                    <td>05</td>
-                                    <td>1</td>
-                                    <td>10%</td>
-                                </tr>
-                             
-                             
                                 
+                                <tr>
+                                    <td>{{$listeClient->count()}}</td>
+                                    <td>{{$transfert_cour}}</td>
+                                    <td>{{$transfert_terminer}}</td>
+                                    <td>{{round($pourcentage,2)}}%</td>
+                                </tr>
                                 
                             </tbody>
                         </table>
@@ -50,33 +48,36 @@
             <div class="col-sm-12 col-xl-12 ">
                         <div class="bg-light rounded h-100 p-4 ">
                            <center> <h6 class="mb-4 text-success">Liste des clients</h6></center>
-                            <table class="table table-striped text-success ">
+                            <table class="table table-striped text-success " >
                                 <thead >
                                     <tr>
                                     <th scope="col">ID</th>
                                         <th scope="col">Nom et Prenom</th>
                                         <th scope="col">pays</th>
                                         <th scope="col">Adresse</th>
-                                        <th scope="col">ville </th>
+                                        
                                         <th scope="col">Montant</th>
                                         <th scope="col">Date et heure</th>
                                         <th scope="col">Supprimer</th>
 
                                     </tr>
                                 </thead>
-                                <tbody>
-
+                                <tbody>                                    
+                                @foreach($listeClient->chunk(25) as $lists)
+                                @foreach($lists as $list)
                                     <tr>
-                                        <th></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td><a href="">Supprimer</a></td>
+                                        <th >{{$list->id}}</th>
+                                        <td >{{$list->nom}} {{$list->prenom}}</td>
+                                        <td >{{$list->pays}}</td>
+                                        <td >{{$list->adresse_domicile}}</td>
+                                        
+                                        <td >{{$list->solde}}</td>
+                                        <td >{{$list->created_at->diffForHumans()}}</td>
+                                        <td ><a href="{{route('supprimer', ['user'=>$list])}}" class="alert-danger">Supprimer</a></td>
                                        
                                     </tr>
+                                    @endforeach
+                                @endforeach
                                     
                                 </tbody>
                             </table>
