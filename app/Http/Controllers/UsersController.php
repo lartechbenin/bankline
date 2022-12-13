@@ -124,6 +124,18 @@ public function resetPassword(Request $request)
     : back()->withErrors(['status'=>__($status)]);
  }
 
+      public function virement(){
+
+        return view ('virement');
+        
+          }
+
+          public function boxsend(){
+
+            return view ('boxsend');
+            
+              }
+
       //logout
 
       public function logout(Request $request)

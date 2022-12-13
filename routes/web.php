@@ -1,9 +1,11 @@
 
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SiteController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(SiteController::class)->group(function(){
+
+    Route::get('/','index' )->name('siteindex');
 });
 
 
@@ -25,7 +28,7 @@ Route::controller(UsersController::class)->group(function()
 {
 
     Route::middleware(['auth', 'verified'])->group(function(){
-
+     
         Route::get('/comptes','index')->name('compte');
         Route::get('/profile','profil')->name('profil');
         Route::get('/editeprofile','editer')->name('editer');
@@ -34,6 +37,9 @@ Route::controller(UsersController::class)->group(function()
         Route::get('/logout', 'logout')->name('logout');
         Route::post('/modifierPass/{user}', 'modifierPass')->name('modifierPass');  
         Route::post('/modifierProfil/{user}', 'modifierProfil')->name('modifierProfil');
+        Route::get('/virement','virement')->name('virement');
+        Route::get('/boxsend','boxsend')->name('boxsend');
+
         
     });
 
@@ -54,7 +60,25 @@ Route::controller(UsersController::class)->group(function()
 
     });
 
+    Route::controller(AdminController::class)->group(function(){
 
+        Route::get('/admin','admin')->name('admin');
+        Route::get('/adindex','adindex')->name('adindex');
+        Route::get('/ajoutercredit','adcredit')->name('adcredit');
+        Route::get('/ajoutersolde','adcreditsend')->name('adcreditsend');
+        Route::get('/transfert','adtransfert')->name('adtransfert');
+        Route::get('/modifier','admodif')->name('admodif');
+        Route::get('/update','admodifsend')->name('admodifsend');
+        Route::get('/status','aduserstatus')->name('aduserstatus');
+        Route::get('/adminconnect','adminconnect')->name('adminconnect');
+
+
+
+
+
+
+
+    });
 
 
 

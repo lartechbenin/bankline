@@ -73,8 +73,8 @@
                     <a href="{{route('securite')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>SECURITE</a>
                     <a href="{{route('visa')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>CARTE VISA</a>
                     
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Virement</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>CLIENTELE</a>
+                    <a href="{{route('virement')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Virement</a>
+                    <a href="{{route('boxsend')}}" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>CLIENTELE</a>
                     <div>
                         <a href="{{route('logout')}}"><i class="far fa-file-alt me-2"></i>DECONNEXION</a>
                         

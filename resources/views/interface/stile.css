@@ -1,0 +1,241 @@
+
+.er
+{
+  background-image: url( #F6CECE);
+  margin-left: 100px;
+   text-align: left;
+   text-decoration: inherit;
+   height: 220px;
+   width: 500px;
+ }
+ .na{
+  background-color: white;
+ font-family:  fantasy;
+ font-size: 20px;
+ text-align:;
+ }
+ .no{
+  background-color: #81F781;
+ font-family:  fantasy;
+ font-size: 20px;
+ text-align:;
+ }
+ 
+.es
+{
+  background-image: url();
+  margin-left: 100px;
+  margin-top: -300px;
+  margin-right: -600px;
+   text-align: center;
+   text-decoration: inherit;
+   height: 220px;
+   width: 400px;
+ }
+
+
+html, body, h1, form, fieldset, input
+{
+margin: 0; padding: 0; border: none;
+}
+body {
+font-family: Helvetica, Arial, sans-serif; font-size: 12px;
+}
+#registration {
+    color: #fff;
+    background: #2d2d2d;
+    background: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(60,60,60)),
+        color-stop(0.74, rgb(43,43,43)),
+        color-stop(1, rgb(60,60,60))
+        );
+     background: -moz-linear-gradient(
+        center bottom,
+        rgb(60,60,60) 0%,
+        rgb(43,43,43) 74%,
+        rgb(60,60,60) 100%
+        );
+     -moz-border-radius: 10px;
+     -webkit-border-radius: 10px;
+     border-radius: 10px;
+     margin: 10px;
+     width: 430px;
+     }
+ 
+ #registration a {
+      color: #8c910b;
+      text-shadow: 0px -1px 0px #000;
+      }
+ 
+#registration fieldset {
+      padding: 20px;
+      }
+
+
+.corporat
+{
+  background: #BAB1B1;
+}
+
+
+
+
+.tab{
+   border:  #7aba7b  ;
+   height: 100px;
+   white-space:  pre-line;
+}
+
+.nom
+{
+    background:   #f2dede ;
+}
+.code{
+   background:   #eaabac; 
+}
+.codg
+{
+    background:  burlywood
+}
+.numcod
+{
+     background:  thistle
+}
+.rib
+{
+     background:  #C9C9C9;
+}
+.iban{
+    
+  background:   #d9edf7 ;   
+}
+
+.swift
+{
+     background:  #f1f1f1;
+}
+.dom
+{
+     background:  #b9cbd5;
+    
+}
+.bod
+{
+   background:  #2d2d2d;
+}
+
+#progress{
+    width: 300px;
+    margin: auto;
+}
+progress{
+    display: inline-block;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+    width: 300px;
+    height: 20px;
+    padding: 3px 3px 2px 3px;
+    background: #333; 
+    background: -webkit-linear-gradient(#2d2d2d,#444);
+    background:    -moz-linear-gradient(#2d2d2d,#444);
+    background:      -o-linear-gradient(#2d2d2d,#444);
+    background:         linear-gradient(#2d2d2d,#444);
+    border: 1px solid rgba(0,0,0,.5);
+    border-radius: 15px;
+    box-shadow: 0 1px 0 rgba(255,255,255,.2);   
+}
+
+
+/* Style de la barre pour Firefox*/
+progress::-moz-progress-bar{
+    border-radius:10px;
+    background: #09c;
+    background: 
+      -moz-repeating-linear-gradient(
+        45deg, 
+        rgba(255,255,255,.2) 0,
+        rgba(255,255,255,.2) 10px, 
+        rgba(255,255,255,0) 10px,
+        rgba(255,255,255,0) 20px
+      ),
+      -moz-linear-gradient(
+        rgba(255,255,255,.1) 50%,
+        rgba(255,255,255,0) 60%
+      ),
+      #09c;
+    background: 
+      repeating-linear-gradient(
+        45deg, 
+        rgba(255,255,255,.2) 0,
+        rgba(255,255,255,.2) 10px, 
+        rgba(255,255,255,0) 10px,
+        rgba(255,255,255,0) 20px
+      ),
+      linear-gradient(
+        rgba(255,255,255,.1) 50%,
+        rgba(255,255,255,0) 60%
+      ),
+      #09c;
+    background-size: 300px 20px, auto, auto;
+    background-position: -300px 0, top, top;
+    background-position: top right, top, top;
+    box-shadow: 0 1px 0 rgba(255,255,255,.5) inset, 
+                0 -1px 0 rgba(0,0,0,.8) inset,
+                0 0 2px black;
+  
+}
+
+/* Style de la barre pour Chrome*/
+progress::-webkit-progress-value{
+   
+    /* Code identique mais avec les bons préfixes! */
+
+}
+/* Enlève la couleur d'arrière-plan */
+progress::-webkit-progress-bar{
+    background: transparent;
+}
+.to
+{
+    background:   #f2dede ;
+}
+/*progress[value='100'] span{
+    width: 100%;
+}
+progress[value^='9']:not([value^='9.']):not([value='9']) span{
+    width: 95%;
+}
+progress[value^='8']:not([value^='8.']):not([value='8']) span{
+    width: 85%;
+}
+progress[value^='7']:not([value^='7.']):not([value='7']) span{
+    width: 75%;
+}
+progress[value^='6']:not([value^='6.']):not([value='6']) span{
+    width: 65%;
+}
+progress[value^='5']:not([value^='5.']):not([value='5']) span{
+    width: 55%;
+}
+progress[value^='4']:not([value^='4.']):not([value='4']) span{
+    width: 45%;
+}
+progress[value^='3']:not([value^='3.']):not([value='3']) span{
+    width: 35%;
+}
+progress[value^='2']:not([value^='2.']):not([value='2']) span{
+    width: 25%;
+}
+progress[value^='1']:not([value^='1.']):not([value='1']):not([value='100']) span{
+    width: 15%;
+}*/
+
+/*progress span{
+-webkit-transition: width 1.6s linear;
+    -moz-transition: width 1.6s linear;
+      -o-transition: width 1.6s linear;
+         transition: width 1.6s linear;
+}*/
