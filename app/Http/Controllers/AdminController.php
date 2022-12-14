@@ -3,20 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\InfoUser;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
 
   use InfoUser;
   
-    public function admin()
-    {
-
-        return view ('Admintemplate/template');
-        
-    }
+    
 
     public function adindex()
     {
@@ -153,5 +151,45 @@ class AdminController extends Controller
 
     return back()->with('success', 'compte crédité avec succès');
    }
+
+   /**
+    * traitement connexion
+    */
+
+    public function adminConnexion(Request $request)
+    {
+
+      
+      //regles de validations
+
+      $validator = $request->validate([
+        'login'=>'required|string',
+        'password'=>'required|string',
+      ]);
+
+      
+      if(Auth::guard('admin')->attempt($validator)){
+
+        $request->session()->regenerate();
+
+        return redirect()->intended('adindex');
+      }
+
+      return back()->withErrors(['login'=>"vos identifants de connexion
+       ne sont pas valides"])->onlyInput('login');
+
+
+
+    }
+
+    public function logout(Request $request)
+      {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('adminconnect');
+
+      }
 
 }

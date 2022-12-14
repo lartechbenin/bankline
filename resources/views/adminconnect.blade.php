@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>bank connect</title>
+    <title>admin connect</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -48,7 +48,48 @@
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
-                        <livewire:livewirelogin />
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                            <a href="index.html" class="">
+                             <center>   <h6 class="text-primary">ESPACE DE CONNEXION Admin</h6></center>
+                            </a>
+                        </div>
+                        <form method="post" action="{{route('adminConnexion')}}">
+                            @csrf
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="email" placeholder="admin" name="login">
+                                        <label for="email">Login </label>
+                                        @if(session()->has('login'))
+                                        <span class="text-danger">{{session('login')}}</span>
+                                        @endif
+                                        @if(session()->has('status'))
+                                        <span class="alert-success">{{session('status')}}</span>
+                                        @endif
+                                        @error('login')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
+                                    <div x-data="{
+                                            type: 'password',
+                                            texte: 'Afficher le mot de passe',
+                                            'etat': false,
+                                            cliquer: function cliquer(){
+                                                this.etat = !this.etat;
+                                                this.texte = this.etat ? 'Masquer le mot de passe' : 'Afficher le mot de passe';
+                                                this.type = this.etat ? 'text' : 'password';
+                                            }
+                                        }">
+                                    <div class="form-floating mb-4">
+                                        <input x-bind:type="type" class="form-control" id="password" placeholder="Mot de passe" name="password">
+                                        <label for="password">Mot de passe</label>
+                                        @error('password')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
+                                    
+                                    </div>
+                                    <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Connexion</button>
+                                    
+                        </form>
                     </div>
                 </div>
             </div>

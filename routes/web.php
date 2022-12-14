@@ -27,7 +27,7 @@ Route::controller(SiteController::class)->group(function(){
 Route::controller(UsersController::class)->group(function()
 {
 
-    Route::middleware(['auth', 'verified'])->group(function(){
+    Route::middleware(['auth:web', 'verified'])->group(function(){
      
         Route::get('/comptes','index')->name('compte');
         Route::get('/profile','profil')->name('profil');
@@ -48,7 +48,7 @@ Route::controller(UsersController::class)->group(function()
     Route::get('/verify/{id}/{hash}', 'traitementMail')->name('verification.verify')->middleware(['auth', 'signed']);
 
     
-    Route::middleware('guest')->group(function(){
+    Route::middleware('guest:web')->group(function(){
 
         Route::get('/inscription','inscription')->name('inscription');
         Route::get('/connection','connection')->name('connection');
@@ -63,17 +63,24 @@ Route::controller(UsersController::class)->group(function()
 
 Route::controller(AdminController::class)->group(function(){
 
-    Route::get('/admin','admin')->name('admin');
-    Route::get('/adindex','adindex')->name('adindex');
-    Route::get('/ajoutercredit','adcredit')->name('adcredit');
-    Route::get('/ajoutersolde/{user}','adcreditsend')->name('adcreditsend');
-    Route::get('/transfert','adtransfert')->name('adtransfert');
-    Route::get('/modifier','admodif')->name('admodif');
-    //Route::get('/update','admodifsend')->name('admodifsend');
-    Route::get('/status','aduserstatus')->name('aduserstatus');
-    Route::get('/adminconnect','adminconnect')->name('adminconnect');
-    Route::get('/supprimer/{user}', 'supprimer')->name('supprimer');
-    Route::get('/modifier/{user}', 'modifier')->name('modifier');
-    Route::post('/modifier', 'miseAjour')->name('miseAjour');
-    Route::post('/crediter', 'crediterMontant')->name('crediterMontant');
+    Route::middleware('auth:admin')->group(function(){
+
+        Route::get('/adindex','adindex')->name('adindex');
+        Route::get('/ajoutercredit','adcredit')->name('adcredit');
+        Route::get('/ajoutersolde/{user}','adcreditsend')->name('adcreditsend');
+        Route::get('/transfert','adtransfert')->name('adtransfert');
+        Route::get('/modifier','admodif')->name('admodif');
+        //Route::get('/update','admodifsend')->name('admodifsend');
+        Route::get('/status','aduserstatus')->name('aduserstatus');
+        Route::get('/supprimer/{user}', 'supprimer')->name('supprimer');
+        Route::get('/modifier/{user}', 'modifier')->name('modifier');
+        Route::post('/modifier', 'miseAjour')->name('miseAjour');
+        Route::post('/crediter', 'crediterMontant')->name('crediterMontant');
+        Route::get('/logouts', 'logout')->name('logouts');
+
+    });
+    
+    
+    Route::get('/adminconnect','adminconnect')->name('adminconnect')->middleware('guest:admin');
+    Route::post('/adminconnect', 'adminConnexion')->name('adminConnexion')->middleware('guest:admin');
 });

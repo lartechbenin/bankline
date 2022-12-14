@@ -45,6 +45,7 @@
 
 
             <!-- Widgets Start -->
+            
             <div class="col-sm-12 col-xl-12 ">
                         <div class="bg-light rounded h-100 p-4 ">
                            <center> <h6 class="mb-4 text-success">Liste des clients</h6></center>

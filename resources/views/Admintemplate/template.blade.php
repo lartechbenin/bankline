@@ -71,7 +71,7 @@
                     <a href="{{route('admodif')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Modifier</a>
                     <a href="{{route('aduserstatus')}}" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Utulisateur en ligne</a>
                     
-                        <a href="{{route('logout')}}" class="nav-item nav-link">DECONNEXION</a>
+                        <a href="{{route('logouts')}}" class="nav-item nav-link">DECONNEXION</a>
                         
                     
                 </div>
