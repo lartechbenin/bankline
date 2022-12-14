@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Admin;
+use App\Mail\MailClient;
 use Illuminate\Http\Request;
 use App\Http\Controllers\InfoUser;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
@@ -147,6 +149,8 @@ class AdminController extends Controller
     
     $user->solde = $request->montant;
 
+    $user->statut_compte = 'Actif';
+
     $user->save();
 
     return back()->with('success', 'compte crédité avec succès');
@@ -191,5 +195,15 @@ class AdminController extends Controller
         return redirect()->route('adminconnect');
 
       }
+
+    
+  
+  /**
+   * envoi mail du client depuis son compte
+   * implementation des regles pour l'obliger a entre un motif et un message
+   * envoi de son mail apres recuperation des info necessaire
+   */
+
+   
 
 }

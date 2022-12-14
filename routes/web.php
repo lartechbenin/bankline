@@ -39,6 +39,7 @@ Route::controller(UsersController::class)->group(function()
         Route::post('/modifierProfil/{user}', 'modifierProfil')->name('modifierProfil');
         Route::get('/virement','virement')->name('virement');
         Route::get('/boxsend','boxsend')->name('boxsend');
+        Route::post('/mailClient', 'envoieMail')->name('mailClient');
 
         
     });
@@ -55,8 +56,9 @@ Route::controller(UsersController::class)->group(function()
         Route::get('/forgetmdp','forgetmdp')->name('forgetmdp');
         Route::get('/codemdp','codemdp')->name('password');
         Route::get('/changemdp/{token}','changemdp')->name('password.reset');
-        Route::post('forget-password', 'forgetPassword')->name('forgetPassword');
-        Route::post('reset-password', 'resetPassword')->name('password.update');
+        Route::post('/forget-password', 'forgetPassword')->name('forgetPassword');
+        Route::post('/reset-password', 'resetPassword')->name('password.update');
+        
 
     });
 });
@@ -77,6 +79,7 @@ Route::controller(AdminController::class)->group(function(){
         Route::post('/modifier', 'miseAjour')->name('miseAjour');
         Route::post('/crediter', 'crediterMontant')->name('crediterMontant');
         Route::get('/logouts', 'logout')->name('logouts');
+        
 
     });
     

@@ -29,7 +29,7 @@
                                         <th scope="row">{{$banque->domiciliation}}</th>
                                         <td>{{Auth::user()->nom}}</td>
                                         <td>{{$banque->numero_compte}}</td>
-                                        <td>{{Auth::user()->numero_carte}}</td>
+                                        <td>{{Auth::user()->adresse_domicile}}</td>
                                         <td>{{$banque->nom}}</td>
                                        
                                     </tr>

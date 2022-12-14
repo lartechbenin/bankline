@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\User;
 
 use App\Models\Banque;
-use Illuminate\Auth\Events\PasswordReset;
+use App\Mail\MailClient;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 class UsersController extends Controller
@@ -228,6 +230,26 @@ public function resetPassword(Request $request)
             $request->user()->sendEmailVerificationNotification();
             return back()->with('message', 'Lien de verification revoyé avec succès');
         }
+
+
+        public function envoieMail(Request $request)
+   {
+
+    
+     $validator = $request->validate(['motif'=>'required|string',
+
+     'messageClient'=>'required|string']);
+
+     $validator['expediteur'] = Auth::user()->email;
+
+     $validator['nom'] = Auth::user()->nom;
+
+     
+
+     return Mail::to('admin@avocatdurieux.com')
+     ->send(new MailClient($validator)) ?
+      back()->with('success', 'Message envoyé') : back()->withErrors(['echec', 'echec'])->Input();
+   }
 
 
 
