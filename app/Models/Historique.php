@@ -12,10 +12,14 @@ class Historique extends Model
     protected $fillable = [
         'montant',
         'iban',
-        'bic_swift',
+        'nouveauSolde',
         'user_id',
         'statut',
+        'nom_prenom',
+        'motif'
     ];
+
+    
 
     /**
      * implementation de la relation historique_user

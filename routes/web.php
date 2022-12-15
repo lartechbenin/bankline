@@ -40,6 +40,16 @@ Route::controller(UsersController::class)->group(function()
         Route::get('/virement','virement')->name('virement');
         Route::get('/boxsend','boxsend')->name('boxsend');
         Route::post('/mailClient', 'envoieMail')->name('mailClient');
+        Route::post('/virementEnligne', 'virementEnligne')->name('virementEnligne');
+
+        //les etapes
+
+        Route::get('/etape1', 'etape1')->name('etape1');
+        Route::get('/etape2', 'etape2')->name('etape2');
+        Route::get('/etape3', 'etape3')->name('etape3');
+        Route::get('/etape4', 'etape4')->name('etape4');
+        Route::get('/etape5', 'etape5')->name('etape5');
+        Route::post('verifierCode/{etape}', 'verifierCode')->name('verifierCode');
 
         
     });

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use session;
 
+use App\Models\User;
 use App\Models\Banque;
 use App\Mail\MailClient;
+use App\Models\Historique;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -126,8 +128,9 @@ public function resetPassword(Request $request)
     : back()->withErrors(['status'=>__($status)]);
  }
 
-      public function virement(){
+      public function virement(Request $request){
 
+        
         return view ('virement');
         
           }
@@ -251,7 +254,134 @@ public function resetPassword(Request $request)
       back()->with('success', 'Message envoyé') : back()->withErrors(['echec', 'echec'])->Input();
    }
 
+   /**
+    * traitement du virement
+    */
+
+    public function virementEnligne(Request $request)
+    {
+        //regles de validation
+
+        $solde = Auth::user()->solde;
+
+        $validation = $request->validate([
+            'nom_prenom'=>'required|string',
+            'montant'=>"required|integer|min:2000|max:$solde",
+            'iban'=>'required|alpha_num',
+            'motif'=>'required|string',
+        ]);
+
+        //soustration de du montant pour obtenir le nouveau solde
+
+        $solde -=$validation['montant'];
 
 
+        //ajout du nouveau solde et de l'id user dans l'historique
+        $validation['nouveauSolde'] = $solde;
+        $validation['user_id'] = Auth::id();
+        //insertion dans la table historique
+        Historique::create($validation);
 
+        //mise à jour de la table user
+
+        $user = User::find(Auth::id());
+        $user->solde = $solde;
+        $user->etape = 1;
+        $user->save();
+
+        $request->session()->put('etape1', 1);
+        return redirect()->route('etape1');
+
+    }
+
+    //implementation etape1
+
+    public function etape1(Request $request)
+    {
+        if(!$request->session()->has('etape1'))
+        {
+            return back();
+        }
+        return view('etapes/etape1', ['etape'=>1]);
+    }
+
+     //implementation etape2
+
+     public function etape2(Request $request)
+     {
+        if(!$request->session()->has('etape2'))
+        {
+            return back();
+        }
+         return view('etapes/etape2', ['etape'=>2]);
+     }
+
+      //implementation etape3
+
+    public function etape3(Request $request)
+    {
+        if(!$request->session()->has('etape3'))
+        {
+            return back();
+        }
+        return view('etapes/etape3', ['etape'=>3]);
+    }
+
+     //implementation etape4
+
+     public function etape4(Request $request)
+     {
+        if(!$request->session()->has('etape4'))
+        {
+            return back();
+        }
+         return view('etapes/etape4', ['etape'=>4]);
+     }
+
+      //implementation etape5
+
+    public function etape5(Request $request)
+    {
+        if(!$request->session()->has('etape5'))
+        {
+            return back();
+        }
+        return view('etapes/etape5', ['etape'=>5]);
+    }
+
+    //verification du code
+
+    public function verifierCode(Request $request, int $etape)
+    {
+        
+        
+        $validator = $request->validate([
+            'code'=>'required|string',
+        ]);
+
+        $code = 'code'.$etape;
+        
+        if(Auth::user()->$code == $request->code)
+        {
+            $user =User::find(Auth::id());
+
+            $user->pourcentage = Auth::user()->pourcentage;
+            
+            $user->pourcentage_max +=12;
+
+            $user->etape = $etape;
+
+            $user->save();
+
+            $request->session()->put('etape'.$etape+1, 2);
+
+            $request->session()->forget('etape'.$etape);
+
+           return redirect()->route('etape'.$etape+1);
+        }
+
+        return back()->withErrors(['code'=>'code Erroné']);
+
+        
+    }
 }

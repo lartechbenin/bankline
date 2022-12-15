@@ -42,6 +42,7 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
         'code5',
         'bloque_compte',
         'pourcentage',
+        'pourcentage_max',
         'login',
         'sexe',
         'pays',

@@ -4,30 +4,43 @@
         <!-- Sidebar End -->
 @section('content')
 <center>
+    
 <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-8">
                         <div class="bg-light rounded h-100 p-4">
-                            <form method="post" action="{{route('modifierProfil', ['user'=>Auth::user()])}}">
+                            <form method="post" action="{{route('virementEnligne')}}">
                              
-                            
+                            @csrf
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon3">NOM ET PRENOM</span>
-                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon6">
+                                <span class="input-group-text" id="nom_prenom">NOM ET PRENOM</span>
+                                <input type="text" class="form-control" id="nom_prenom" aria-describedby="basic-addon6" name="nom_prenom" value="{{Auth::user()->nom}} {{Auth::user()->prenom}}">
+                                @error('nom_prenom')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon3">MONTANT</span>
-                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon6">
+                                <span class="input-group-text" id="montant">MONTANT</span>
+                                <input type="text" class="form-control" id="montant" aria-describedby="basic-addon6" name="montant" value="{{Auth::user()->solde}}">
+                                @error('montant')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                             
                                 <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon3">I B A N</span>
-                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon6">
+                                <span class="input-group-text" id="iban">I B A N</span>
+                                <input type="text" class="form-control" id="iban" aria-describedby="basic-addon6" name="iban">
+                                @error('iban')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                            
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon3">MOTIF</span>
-                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon6">
+                                <span class="input-group-text" id="motif">MOTIF</span>
+                                <input type="text" class="form-control" id="motif" aria-describedby="basic-addon6" name="motif">
+                                @error('motif')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>  
 
                             <fieldset class="row mb-3">
