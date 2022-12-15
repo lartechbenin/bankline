@@ -89,6 +89,8 @@ Route::controller(AdminController::class)->group(function(){
         Route::post('/modifier', 'miseAjour')->name('miseAjour');
         Route::post('/crediter', 'crediterMontant')->name('crediterMontant');
         Route::get('/logouts', 'logout')->name('logouts');
+        Route::get('/confirmSup/user', 'confirmSup')->name('confirmSup');
+        Route::post('/confirmSup', 'sup')->name('confirmSup');
         
 
     });

@@ -81,9 +81,49 @@ class AdminController extends Controller
   }
 
   //supprimer un utilisateurs
+
   public function supprimer(User $user)
   {
-    dd($user);
+    return view('confirmSup', $user);
+  }
+
+  public function sup(Request $request)
+  {
+    $user = User::find($request->id);
+
+    $banque = $user->banque;
+    
+    $historiques = $user->historiques;
+
+    $messages = $user->messages;
+
+    if($banque != null)
+    {
+      
+        $banque->delete();
+      
+    }
+    
+
+    if($messages->count() >=1)
+    {
+      $messages->map(function($message){
+        $message->delete();
+      });
+    }
+    
+
+    if($historiques->count() >=1)
+    {
+      $historiques->map(function($historique){
+        $historique->delete();
+      });
+    }
+
+    $user->delete();
+
+    return redirect()->route('adindex');
+
   }
 
   //Modifer un utilisateurs
