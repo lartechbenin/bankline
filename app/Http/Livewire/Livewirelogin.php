@@ -38,7 +38,10 @@ class Livewirelogin extends Component
 
         
         if(Auth::attempt($this->validate())){
+
+            
             $request->session()->regenerate();
+            
             redirect()->route('compte');
         }
 

@@ -143,6 +143,7 @@
 
 
             <!-- Recent Sales Start -->
+            @if(!$historiques->isEmpty())
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
@@ -159,12 +160,16 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($historiques->chunk(25) as $historiqus)
+                                @foreach($historiqus as $historique)
                                 <tr>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Paid</td>
+                                    <td>{{$historique->created_at}}</td>
+                                    <td>{{$historique->montant}}</td>
+                                    <td>{{$historique->iban}}</td>
                                     <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
                                 </tr>
+                                @endforeach
+                                @endforeach
                              
                              
                                 
@@ -174,6 +179,7 @@
                     </div>
                 </div>
             </div>
+            @endif
             <!-- Recent Sales End -->
 
 

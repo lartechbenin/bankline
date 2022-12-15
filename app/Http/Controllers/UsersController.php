@@ -21,9 +21,8 @@ class UsersController extends Controller
 {
     public function index(){        
         
-        
-        
-        return view('index',['banque'=>Banque::where('user_id', Auth::id())->first()    ] );
+                
+        return view('index',['banque'=>Banque::where('user_id', Auth::id())->first(), 'historiques'=>Auth::user()->historiques] );
     }
 
     public function profil(){        
@@ -130,7 +129,15 @@ public function resetPassword(Request $request)
 
       public function virement(Request $request){
 
-        
+        if(Auth::user()->etape >= 1)
+        {
+            //creation de la session en fonction de l'etape
+            $request->session()->put('etape'.Auth::user()->etape, Auth::user()->etape);
+            
+            //redirection sur la route correspond à l'etape
+
+            return redirect()->route('etape'.Auth::user()->etape);
+        }
         return view ('virement');
         
           }
@@ -302,6 +309,13 @@ public function resetPassword(Request $request)
         {
             return back();
         }
+
+        $user =User::find(Auth::id());
+
+        $user->pourcentage = Auth::user()->pourcentage_max;
+
+        $user->save();
+
         return view('etapes/etape1', ['etape'=>1]);
     }
 
@@ -313,6 +327,13 @@ public function resetPassword(Request $request)
         {
             return back();
         }
+
+        $user =User::find(Auth::id());
+
+        $user->pourcentage = Auth::user()->pourcentage_max;
+
+        $user->save();
+
          return view('etapes/etape2', ['etape'=>2]);
      }
 
@@ -324,6 +345,13 @@ public function resetPassword(Request $request)
         {
             return back();
         }
+
+        $user =User::find(Auth::id());
+
+        $user->pourcentage = Auth::user()->pourcentage_max;
+
+        $user->save();
+
         return view('etapes/etape3', ['etape'=>3]);
     }
 
@@ -335,6 +363,13 @@ public function resetPassword(Request $request)
         {
             return back();
         }
+
+        $user =User::find(Auth::id());
+
+        $user->pourcentage = Auth::user()->pourcentage_max;
+
+        $user->save();
+
          return view('etapes/etape4', ['etape'=>4]);
      }
 
@@ -346,6 +381,13 @@ public function resetPassword(Request $request)
         {
             return back();
         }
+
+        $user =User::find(Auth::id());
+
+        $user->pourcentage = Auth::user()->pourcentage_max;
+
+        $user->save();
+
         return view('etapes/etape5', ['etape'=>5]);
     }
 
@@ -365,7 +407,7 @@ public function resetPassword(Request $request)
         {
             $user =User::find(Auth::id());
 
-            $user->pourcentage = Auth::user()->pourcentage;
+            $user->pourcentage = Auth::user()->pourcentage_max;
             
             $user->pourcentage_max +=12;
 
