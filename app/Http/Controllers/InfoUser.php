@@ -46,7 +46,7 @@ trait InfoUser
 
           
            $user->update([
-            'password'=>$request->password,
+            'password'=>Hash::make($request->password),
            ]);
 
            
