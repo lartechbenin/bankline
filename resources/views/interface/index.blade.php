@@ -16,7 +16,7 @@
                      <h1>LA BANQUE RAPIDE ET FIABLE</h1>
                      <h3>Nous tenons toujours nos promesses à vous promouvoir</h3>
                      <p>Nous sommes en mission de construire, de vous aider à développer et de maintenir vos projets.</p>
-                     <a href="codefr/page-reg-page.php" class="btn btn-white"> CREER UN COMPTE   </a>
+                     <a href="{{route('inscription')}}" class="btn btn-white"> CREER UN COMPTE   </a>
                   </div>
                </div>
             </div>
@@ -85,7 +85,7 @@
                         <li>  <i class="fa fa-check"></i> Garantie de remboursement</li>
                         <li>  <i class="fa fa-check"></i> Obtenez un prêt et suivez vos rêves</li>
                      </ul>
-                     <a href="https://carrefourbnk.com/contact.html" class="btn-custom btn">Maintenant <i class="fa fa-angle-right"></i></a>
+                     <a href="{{route('faq')}}" class="btn-custom btn">Maintenant <i class="fa fa-angle-right"></i></a>
                   </div>
                </div>
                <div class="col-md-6 col-sm-6 col-xs-12 nopadding hidden-sm">
@@ -192,86 +192,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-md-3 col-sm-4 col-xs-12 nopadding">
-                     <div class="recent-project">
-                        <a href="#"><img src="images/casestudies/2.jpg" alt=""></a>
-                        <div class="project-overlay">
-                           <div class="project-info">
-                              <h3><a href="#">FInance Company Ranked Top in Google</a></h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-sm-4 col-xs-12 nopadding">
-                     <div class="recent-project">
-                        <a href="#"><img src="images/casestudies/3.jpg" alt=""></a>
-                        <div class="project-overlay">
-                           <div class="project-info">
-                              <h3><a href="#">History Management</a></h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-sm-4 col-xs-12 nopadding">
-                     <div class="recent-project">
-                        <a href="#"><img src="images/casestudies/4.jpg" alt=""></a>
-                        <div class="project-overlay">
-                           <div class="project-info">
-                              <h3><a href="#">Reporting and consultacy in Every field</a></h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-sm-4 col-xs-12 nopadding">
-                     <div class="recent-project">
-                        <a href="#"><img src="images/casestudies/5.jpg" alt=""></a>
-                        <div class="project-overlay">
-                           <div class="project-info">
-                              <h3><a href="#">Multipurpose Fully Documneted Web Projects</a></h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-sm-4 col-xs-12 nopadding">
-                     <div class="recent-project">
-                        <a href="#"><img src="images/casestudies/6.jpg" alt=""></a>
-                        <div class="project-overlay">
-                           <div class="project-info">
-                              <h3><a href="#">Easy and Super Optimized in WordPress</a></h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-sm-4 col-xs-12 nopadding">
-                     <div class="recent-project">
-                        <a href="#"><img src="images/casestudies/7.jpg" alt=""></a>
-                        <div class="project-overlay">
-                           <div class="project-info">
-                              <h3><a href="#">Professional Study Matrials and Design Projects</a></h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-sm-4 col-xs-12 nopadding">
-                     <div class="recent-project">
-                        <a href="#"><img src="images/casestudies/8.jpg" alt=""></a>
-                        <div class="project-overlay">
-                           <div class="project-info">
-                              <h3><a href="#">Signed Project with Google</a></h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-3 col-sm-4 col-xs-12 nopadding">
-                     <div class="recent-project">
-                        <a href="#"><img src="images/casestudies/9.jpg" alt=""></a>
-                        <div class="project-overlay">
-                           <div class="project-info">
-                              <h3><a href="#">Faisal Bank Ltd. Rank</a></h3>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+                  
                   <div class="col-md-3 col-sm-4 col-xs-12 nopadding">
                      <div class="recent-project">
                         <a href="#"><img src="images/casestudies/10.jpg" alt=""></a>
@@ -450,7 +371,7 @@
                         <p>On vous écoute, on échange, on collabore, on partage. .</p>
                      </div>
                   </div>
-                  <div class="col-md-2 col-sm-12 col-xs-12"> <a class="btn btn-green-transparent" href="https://carrefourbnk.com/contact.html">Démarrer maintenant <i class="fa fa-angle-double-right"></i></a> </div>
+                  <div class="col-md-2 col-sm-12 col-xs-12"> <a class="btn btn-green-transparent" href="{{route('faq')}}">Démarrer maintenant <i class="fa fa-angle-double-right"></i></a> </div>
                </div>
             </div>
          </div>

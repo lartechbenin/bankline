@@ -43,38 +43,10 @@
 <div class="header-top clear">
          <div class="container">
             <div class="row">
-               <div class="col-md-7 col-sm-6 hidden-xs">
-			   
-			   <!-- GTranslate: https://gtranslate.io/ -->
-<a href="#" onclick="doGTranslate('fr|en');return false;" title="English" class="gflag nturl" style="background-position:-0px -0px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="English" /></a><a href="#" onclick="doGTranslate('fr|fr');return false;" title="French" class="gflag nturl" style="background-position:-200px -100px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="French" /></a><a href="#" onclick="doGTranslate('fr|de');return false;" title="German" class="gflag nturl" style="background-position:-300px -100px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="German" /></a><a href="#" onclick="doGTranslate('fr|it');return false;" title="Italian" class="gflag nturl" style="background-position:-600px -100px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="Italian" /></a><a href="#" onclick="doGTranslate('fr|pt');return false;" title="Portuguese" class="gflag nturl" style="background-position:-300px -200px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="Portuguese" /></a><a href="#" onclick="doGTranslate('fr|ru');return false;" title="Russian" class="gflag nturl" style="background-position:-500px -200px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="Russian" /></a><a href="#" onclick="doGTranslate('fr|es');return false;" title="Spanish" class="gflag nturl" style="background-position:-600px -200px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="Spanish" /></a>
-
-<style type="text/css">
-<!--
-a.gflag {vertical-align:middle;font-size:24px;padding:1px 0;background-repeat:no-repeat;background-image:url(//gtranslate.net/flags/24.png);}
-a.gflag img {border:0;}
-a.gflag:hover {background-image:url(//gtranslate.net/flags/24a.png);}
-#goog-gt-tt {display:none !important;}
-.goog-te-banner-frame {display:none !important;}
-.goog-te-menu-value:hover {text-decoration:none !important;}
-body {top:0 !important;}
-#google_translate_element2 {display:none!important;}
--->
+               <div class="col-md-7 col-sm-6 hidden-xs">               
 </style>
 
-<div id="google_translate_element2"></div>
-<script type="text/javascript">
-function googleTranslateElementInit2() {new google.translate.TranslateElement({pageLanguage: 'fr',autoDisplay: false}, 'google_translate_element2');}
-</script><script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
 
-
-<script type="text/javascript">
-/* <![CDATA[ */
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 7(a,b){n{4(2.9){3 c=2.9("o");c.p(b,f,f);a.q(c)}g{3 c=2.r();a.s(\'t\'+b,c)}}u(e){}}6 h(a){4(a.8)a=a.8;4(a==\'\')v;3 b=a.w(\'|\')[1];3 c;3 d=2.x(\'y\');z(3 i=0;i<d.5;i++)4(d[i].A==\'B-C-D\')c=d[i];4(2.j(\'k\')==E||2.j(\'k\').l.5==0||c.5==0||c.l.5==0){F(6(){h(a)},G)}g{c.8=b;7(c,\'m\');7(c,\'m\')}}',43,43,'||document|var|if|length|function|GTranslateFireEvent|value|createEvent||||||true|else|doGTranslate||getElementById|google_translate_element2|innerHTML|change|try|HTMLEvents|initEvent|dispatchEvent|createEventObject|fireEvent|on|catch|return|split|getElementsByTagName|select|for|className|goog|te|combo|null|setTimeout|500'.split('|'),0,{}))
-/* ]]> */
-</script>
-
-                 
-</style>
  </div>
                <div class="col-md-5 col-sm-6 col-xs-12">
                   <div class="header-top-right header-top-info">
@@ -100,10 +72,36 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
                            </li>
                         </ul>
                      </div>
+                     
                   </div>
+                  
                </div>
+               
             </div>
+            <!-- GTranslate: https://gtranslate.io/ -->
+<a href="#" onclick="doGTranslate('fr|nl');return false;" title="Dutch" class="gflag nturl" style="background-position:-0px -100px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="Dutch" /></a><a href="#" onclick="doGTranslate('fr|en');return false;" title="English" class="gflag nturl" style="background-position:-0px -0px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="English" /></a><a href="#" onclick="doGTranslate('fr|et');return false;" title="Estonian" class="gflag nturl" style="background-position:-400px -400px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="Estonian" /></a><a href="#" onclick="doGTranslate('fr|fi');return false;" title="Finnish" class="gflag nturl" style="background-position:-100px -100px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="Finnish" /></a><a href="#" onclick="doGTranslate('fr|fr');return false;" title="French" class="gflag nturl" style="background-position:-200px -100px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="French" /></a><a href="#" onclick="doGTranslate('fr|de');return false;" title="German" class="gflag nturl" style="background-position:-300px -100px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="German" /></a><a href="#" onclick="doGTranslate('fr|it');return false;" title="Italian" class="gflag nturl" style="background-position:-600px -100px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="Italian" /></a><a href="#" onclick="doGTranslate('fr|ko');return false;" title="Korean" class="gflag nturl" style="background-position:-0px -200px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="Korean" /></a><a href="#" onclick="doGTranslate('fr|pt');return false;" title="Portuguese" class="gflag nturl" style="background-position:-300px -200px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="Portuguese" /></a><a href="#" onclick="doGTranslate('fr|ru');return false;" title="Russian" class="gflag nturl" style="background-position:-500px -200px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="Russian" /></a><a href="#" onclick="doGTranslate('fr|es');return false;" title="Spanish" class="gflag nturl" style="background-position:-600px -200px;"><img src="//gtranslate.net/flags/blank.png" height="24" width="24" alt="Spanish" /></a>
+
+<style type="text/css">
+<!--
+a.gflag {vertical-align:middle;font-size:24px;padding:1px 0;background-repeat:no-repeat;background-image:url(//gtranslate.net/flags/24.png);}
+a.gflag img {border:0;}
+a.gflag:hover {background-image:url(//gtranslate.net/flags/24a.png);}
+-->
+</style>
+
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+if(top.location!=self.location)top.location=self.location;
+window['_tipoff']=function(){};window['_tipon']=function(a){};
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(location.hostname!='translate.googleusercontent.com' && lang_pair=='fr|fr')return;else if(location.hostname=='translate.googleusercontent.com' && lang_pair=='fr|fr')location.href=unescape(gfg('u'));else if(location.hostname!='translate.googleusercontent.com' && lang_pair!='fr|fr')location.href='https://translate.google.com/translate?client=tmpg&hl=en&langpair='+lang_pair+'&u='+escape(location.href);else location.href='https://translate.google.com/translate?client=tmpg&hl=en&langpair='+lang_pair+'&u='+unescape(gfg('u'));}
+function gfg(name) {name=name.replace(/[[]/,"\[").replace(/[]]/,"\]");var regexS="[?&]"+name+"=([^&#]*)";var regex=new RegExp(regexS);var results=regex.exec(location.href);if(results==null)return "";return results[1];}
+/* ]]> */
+</script>
+
          </div>
+         
       </div>
 
 
@@ -112,14 +110,14 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
             <div class="row">
                <div class="col-md-3 col-sm-3 col-xs-12">
                   <div class="header-top-left header-top-info">
-                     <a href="index.php"> <img src="images/logo.png" alt="logo" class="img-responsive"> </a>
+                     <a href="{{route('index')}}"> <img src="images/logo.png" alt="logo" class="img-responsive"> </a>
                   </div>
                </div>
                <div class="col-md-7 col-sm-7 col-xs-12">
                   <div class="information-content">
                      <div class="info-box">
                         <div class="icon"><span class="icon-phone"></span></div>
-                        <div class="text">(33) 6 44 69 72 61</div>
+                        <div class="text">+31 644 781 581</div>
                         <span class="location"> Lundi - Samedi, 8h-18h </span> 
                      </div>
                      <div class="info-box  hidden-sm">
@@ -136,7 +134,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
                </div>
                <div class="col-md-2 col-sm-2 col-xs-12">
                   <div class="header-top-right header-top-info">
-                     <a href="codefr/page-login.php" class="btn btn-custom chat-btn"> Mon Compte</a>
+                     <a href="{{route('connection')}}" class="btn btn-custom chat-btn"> Mon Compte</a>
                   </div>
                </div>
             </div>
@@ -153,11 +151,11 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
                      </ul>
                      <div class="clearfix"></div>
                      <ul class="menu-links">
-                        <li><a href="index.php">Acceuil</a></li>
-                        <li><a href="about.php"> A Propos </a></li>
-                        <li><a href="services.php">Services</a></li>
-                        <li><a href="services-plus.php">Plus</a></li>
-                        <li class="active"><a href="faq.php">Contact</a></li>
+                        <li><a href="{{route('index')}}">Acceuil</a></li>
+                        <li><a href="{{route('about')}}"> A Propos </a></li>
+                        <li><a href="{{route('services')}}">Services</a></li>
+                        <li><a href="{{route('plus')}}">Plus</a></li>
+                        <li ><a href="{{route('faq')}}">Contact</a></li>
                      </ul>
                      <ul class="menu-links pull-right">
                         <li><a href="{{route('connection')}}"> <i class="fa fa-power-off"></i> Se connecter </a></li>

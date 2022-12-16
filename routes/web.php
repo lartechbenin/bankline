@@ -20,7 +20,13 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 Route::controller(SiteController::class)->group(function(){
 
-    Route::get('/','index' )->name('siteindex');
+    Route::get('/','index' )->name('index');
+    Route::get('faq','faq' )->name('faq');
+    Route::get('about','about' )->name('about');
+    Route::get('services','services' )->name('services');
+    Route::get('plus','plus' )->name('plus');
+
+
 });
 
 

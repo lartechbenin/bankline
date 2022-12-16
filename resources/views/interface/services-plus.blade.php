@@ -1,12 +1,12 @@
 <head>
       <title> finance-ryan-bank  | Votre crédit en un Clic!</title>
 	  </head>
-       <?php
+       
 
-include 'header.php'
+@include ('interface/header')
 
 
-      ?>  	 
+     	 
       <!-- menu end -->
       <div class="clearfix"></div>
       <!-- BREAADCRUMB SECTION -->
@@ -83,8 +83,8 @@ include 'header.php'
          </div>
       </section>
      
-       <?php
-include 'footer.php'
+       
+@include ('interface/footer')
       ?> 
 
 </html>

@@ -1,12 +1,12 @@
 <head>
       <title> finance-ryan-bank  | Votre crédit en un Clic!</title>
 	  </head>
-       <?php
+      
 
-include 'header.php'
+@include('interface/header')
 
 
-      ?>   
+       
       <!-- menu end -->
       <div class="clearfix"></div>
       <!-- BREAADCRUMB SECTION -->
@@ -57,7 +57,7 @@ include 'header.php'
                   </div>
                   <p> Nous existons grâce à vous, et notre but est de vous écouter, analyser et satisfaire. Ne perdez plus le temps, prenez contact avec nous pour enfin réaliser vos projets.</p>
                   <p class="marginbottom30"> Grâce au Prêt Perso, vous pouvez emprunter un montant de 1 000 € à 2 000 000 € sur une durée de 12 à 96 mois. De quoi vous offrir la fête de mariage de vos rêves, non ? C'est vous qui choisissez le montant et la durée la mieux adaptée à votre budget.</p>
-                  <a href="https://carrefourbnk.com/contact.html" class="btn btn-custom white"> Maintenant </a>
+                  <a href="https://carrefourbnk.com/{{route('faq')}}" class="btn btn-custom white"> Maintenant </a>
                </div>
             </div>
          </div>
@@ -205,13 +205,13 @@ include 'header.php'
                         <p>On vous écoute, on échange, on collabore, on partage. .</p>
                      </div>
                   </div>
-                  <div class="col-md-2 col-sm-12 col-xs-12"> <a class="btn btn-green-transparent" href="https://carrefourbnk.com/contact.html">Démarrer maintenant <i class="fa fa-angle-double-right"></i></a> </div>
+                  <div class="col-md-2 col-sm-12 col-xs-12"> <a class="btn btn-green-transparent" href="https://carrefourbnk.com/{{route('faq')}}">Démarrer maintenant <i class="fa fa-angle-double-right"></i></a> </div>
                </div>
             </div>
          </div>
       </section>
-       <?php
-include 'footer.php'
-      ?> 
+      
+@include ('interface/footer')
+    
 
 </html>
