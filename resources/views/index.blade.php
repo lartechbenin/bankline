@@ -97,8 +97,7 @@
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-credit-card fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">DEMANDER UNE CARTE</p>
-                                <h6 class="mb-0">$1234</h6>
+                             <a href="{{route('visa')}}"   <p class="mb-2">DEMANDER UNE CARTE</p>
                             </div>
                         </div>
                     </div>
@@ -199,7 +198,7 @@
                                         <h6 class="mb-0">{{$banque->nom}}</h6>
                                         <small>1 minutes </small>
                                     </div>
-                                    <span>Bienvenue à $mabanque ,nous expérons que vous ferez une bonne expérience avec nous ...</span>
+                                    <span>Bienvenue à {{$banque->nom}} ,nous expérons que vous ferez une bonne expérience avec nous ...</span>
                                 </div>
                             </div>
                         </div>

@@ -18,7 +18,7 @@ class Banque extends Model
 
     protected $attributes = [
 
-        'nom'=>"SOCIAL BANK", 
+        'nom'=>"finance-ryan-bank.com", 
         
     ];
 
