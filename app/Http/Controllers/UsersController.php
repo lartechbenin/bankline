@@ -10,6 +10,7 @@ use App\Mail\MailClient;
 use App\Models\Historique;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\InfoUser;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -19,6 +20,8 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 class UsersController extends Controller
 {
+    use InfoUser;
+    
     public function index(){        
         
                 
@@ -165,23 +168,18 @@ public function resetPassword(Request $request)
       public function modifierPass(User $user, Request $request)
       {
 
-        //Regle de validations
+        UsersController::modifPass($user, $request );
 
-            $request->validate([
-                'password_confirmation'=>'required|string',
-                'password'=>'confirmed',
-                'current_password'=>'current_password',
-            ]);
+        //retour sur la page avec un message de succes
 
-
-            //Modification de l'ancian mdp par le nouveau
-
-            $user->password = Hash::make($request->password);
-
-            $user->save();
-
-            //retour sur la page avec un message de succes
+        if(UsersController::modifPass($user, $request ))
+        {
             return back()->with('success', 'Mot de passe modifier avec succès');
+        }
+
+        return back()->withErrors('echec', 'Mot de passe non modifier');
+        
+        
       }
 
       /**

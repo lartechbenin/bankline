@@ -91,6 +91,9 @@ Route::controller(AdminController::class)->group(function(){
         Route::get('/logouts', 'logout')->name('logouts');
         Route::get('/confirmSup/user', 'confirmSup')->name('confirmSup');
         Route::post('/confirmSup', 'sup')->name('confirmSup');
+        Route::get('/modifPassAdmin','modifPassAdmin')->name('modifPassAdmin');
+        Route::post('/modifierPassAdmin', 'modifierPass')->name('modifierPassAdmin');
+
         
 
     });

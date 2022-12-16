@@ -50,7 +50,30 @@ class AdminController extends Controller
                         
  }
 
-                          
+    
+ // implementation de modifier mot de passe
+
+ public function modifierPass(Request $request)
+ {
+
+  
+    //Regle de validations
+AdminController::modifPass(Admin::find(Auth::id()), $request);
+  
+  return back()->with('success', 'Mot de passe modifier avec succès');
+   
+ }
+
+ /**
+  * modifier passe admin vue
+  */
+
+  public function modifPassAdmin(){
+
+    
+    return view('modifPassAdmin');
+}
+
  public function admodif()
  {
 

@@ -66,7 +66,7 @@
                     <a href="{{route('adcredit')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Créditer compte</a>
 
                     <a href="{{route('adtransfert')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Transfert en cour</a>
-                    <a href="" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Message</a>
+                    <a href="{{route('modifPassAdmin')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Modifier mot de passe</a>
                     
                     <a href="{{route('admodif')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Modifier</a>
                     <a href="{{route('aduserstatus')}}" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Utulisateur en ligne</a>

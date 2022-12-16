@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\Model;
 
 trait InfoUser
 {
@@ -24,4 +27,28 @@ trait InfoUser
 
         return $liste;
     }
+
+     // implementation de modifier mot de passe
+
+     public function modifPass(Model $user, Request $request)
+     {
+
+       //Regle de validations
+
+           $request->validate([
+               'password_confirmation'=>'required|string',
+               'password'=>'confirmed',
+               'current_password'=>'current_password',
+           ]);
+
+
+           //Modification de l'ancian mdp par le nouveau
+
+          
+           $user->update([
+            'password'=>$request->password,
+           ]);
+
+           
+     }
 }
